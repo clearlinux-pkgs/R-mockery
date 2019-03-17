@@ -4,23 +4,20 @@
 #
 Name     : R-mockery
 Version  : 0.4.1.1
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/mockery_0.4.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/mockery_0.4.1.1.tar.gz
 Summary  : Mocking Library for R
 Group    : Development/Tools
 License  : MIT
-Requires: R-markdown
 BuildRequires : R-markdown
 BuildRequires : buildreq-R
 
 %description
-The two main functionalities of this package are creating mock
-    objects (functions) and selectively intercepting calls to a given
-    function that originate in some other function. It can be used
-    with any testing framework available for R. Mock objects can
-    be injected with either this package's own stub() function or a
-    similar with_mock() facility present in the testthat package.
+# mockery
+[![Travis-CI Build Status](https://travis-ci.org/n-s-f/mockery.svg?branch=master)](https://travis-ci.org/n-s-f/mockery)
+[![Coverage Status](https://img.shields.io/codecov/c/github/n-s-f/mockery/master.svg)](https://codecov.io/github/n-s-f/mockery?branch=master)
+[![CRAN version](http://www.r-pkg.org/badges/version/mockery)](https://cran.r-project.org/package=mockery)
 
 %prep
 %setup -q -c -n mockery
@@ -30,11 +27,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1534714677
+export SOURCE_DATE_EPOCH=1552810487
 
 %install
+export SOURCE_DATE_EPOCH=1552810487
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1534714677
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -69,8 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library mockery|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  mockery || :
 
 
 %files
@@ -101,3 +97,6 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/mockery/help/paths.rds
 /usr/lib64/R/library/mockery/html/00Index.html
 /usr/lib64/R/library/mockery/html/R.css
+/usr/lib64/R/library/mockery/tests/testthat.R
+/usr/lib64/R/library/mockery/tests/testthat/test-mock-object.R
+/usr/lib64/R/library/mockery/tests/testthat/test_stub.R
