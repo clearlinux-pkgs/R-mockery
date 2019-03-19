@@ -4,13 +4,15 @@
 #
 Name     : R-mockery
 Version  : 0.4.1.1
-Release  : 24
+Release  : 25
 URL      : https://cran.r-project.org/src/contrib/mockery_0.4.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/mockery_0.4.1.1.tar.gz
 Summary  : Mocking Library for R
 Group    : Development/Tools
 License  : MIT
+Requires: R-rlang
 BuildRequires : R-markdown
+BuildRequires : R-rlang
 BuildRequires : buildreq-R
 
 %description
@@ -27,10 +29,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552810487
+export SOURCE_DATE_EPOCH=1552958769
 
 %install
-export SOURCE_DATE_EPOCH=1552810487
+export SOURCE_DATE_EPOCH=1552958769
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
