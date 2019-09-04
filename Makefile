@@ -1,5 +1,5 @@
 PKG_NAME := R-mockery
-URL = https://cran.r-project.org/src/contrib/mockery_0.4.1.1.tar.gz
+URL = https://cran.r-project.org/src/contrib/mockery_0.4.2.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
