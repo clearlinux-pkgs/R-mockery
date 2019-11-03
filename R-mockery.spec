@@ -4,7 +4,7 @@
 #
 Name     : R-mockery
 Version  : 0.4.2
-Release  : 31
+Release  : 32
 URL      : https://cran.r-project.org/src/contrib/mockery_0.4.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/mockery_0.4.2.tar.gz
 Summary  : Mocking Library for R
