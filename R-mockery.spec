@@ -4,7 +4,7 @@
 #
 Name     : R-mockery
 Version  : 0.4.2
-Release  : 34
+Release  : 35
 URL      : https://cran.r-project.org/src/contrib/mockery_0.4.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/mockery_0.4.2.tar.gz
 Summary  : Mocking Library for R
@@ -13,32 +13,33 @@ License  : MIT
 Requires: R-testthat
 BuildRequires : R-testthat
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
-# mockery
-[![Travis-CI Build Status](https://travis-ci.org/r-lib/mockery.svg?branch=master)](https://travis-ci.org/r-lib/mockery)
-[![Coverage Status](https://img.shields.io/codecov/c/github/r-lib/mockery/master.svg)](https://codecov.io/github/r-lib/mockery?branch=master)
-[![CRAN version](http://www.r-pkg.org/badges/version/mockery)](https://CRAN.r-project.org/package=mockery)
-[![Downloads](http://cranlogs.r-pkg.org/badges/mockery)](https://CRAN.r-project.org/package=mockery)
+The two main functionalities of this package are creating mock
+    objects (functions) and selectively intercepting calls to a given
+    function that originate in some other function. It can be used
+    with any testing framework available for R. Mock objects can
+    be injected with either this package's own stub() function or a
+    similar with_mock() facility present in the 'testthat' package.
 
 %prep
 %setup -q -c -n mockery
+cd %{_builddir}/mockery
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571868122
+export SOURCE_DATE_EPOCH=1589757442
 
 %install
-export SOURCE_DATE_EPOCH=1571868122
+export SOURCE_DATE_EPOCH=1589757442
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
