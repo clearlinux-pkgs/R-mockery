@@ -1,2 +1,13 @@
 # This file contains recursive sources that require this package
+R-bench
+R-cli
+R-cpp11
+R-debugme
+R-gh
+R-gitcreds
 R-languageserver
+R-lintr
+R-rcmdcheck
+R-remotes
+R-sessioninfo
+R-xml2
