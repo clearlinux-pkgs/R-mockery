@@ -1,12 +1,9 @@
 # This file contains recursive sources that require this package
-R-bench
 R-debugme
-R-gh
+R-devtools
 R-gitcreds
-R-languageserver
-R-lintr
+R-packrat
 R-rcmdcheck
-R-remotes
 R-sessioninfo
 R-whoami
 R-xml2
